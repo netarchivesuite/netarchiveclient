@@ -2,7 +2,7 @@
 
 
 ## NetarchiveClient v.3.1.1 has been released and can be downloaded here:
-
+https://github.com/netarchivesuite/netarchiveclient/releases/tag/v.3.1.1
 
 ## About NetarchiveClient
 
