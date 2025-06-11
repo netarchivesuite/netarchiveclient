@@ -1,0 +1,29 @@
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+    <id>hadoop</id>
+    <formats>
+        <format>jar</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <dependencySets>
+        <dependencySet>
+            <unpack>true</unpack>
+            <scope>runtime</scope>
+            <useProjectArtifact>true</useProjectArtifact>
+            <useTransitiveFiltering>true</useTransitiveFiltering>
+            <excludes>
+                <!--Exclude every logging thing, and use the slf4j+log4j in the hadoop framework-->
+                <exclude>commons-logging:commons-logging:*</exclude>
+                <exclude>org.slf4j:*</exclude>
+                <exclude>log4j:*</exclude>
+                <exclude>ch.qos.logback:logback-classic:*</exclude>
+
+                <!--The hadoop job does NOT need the tika parsers-->
+                <exclude>org.apache.tika:tika-parsers:*</exclude>
+
+                <!--Use the system hadoop, and do not bundle it-->
+                <exclude>org.apache.hadoop:*</exclude>
+            </excludes>
+        </dependencySet>
+    </dependencySets>
+</assembly>

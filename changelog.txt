@@ -1,0 +1,52 @@
+
+2023-06-06: Version 3.1.1
+Smarter parsing of the Solr URL, making it possible to skip round-tripping the master Solr node "ns"
+
+2023-03-31: Version 3.1
+Add optional deduplication of results
+
+2020-08-17: version 3.0
+Upgrade to java 11, does still compile/run under java 8.
+Rewrite of pagination logic. Now used cursermark instead of splitting on date (until buffersize match). 
+This will give a minor improvement in performance and load on the solr-cores.
+Export in JSON also possible.
+Using picocli for CLI parsing of arguments 
+See: https://sbprojects.statsbiblioteket.dk/pages/viewpage.action?spaceKey=YAK&title=netarchiveclient 
+for usage.
+
+
+2018-10-06: version 2.6
+Extact tool now 100% generic with fields, shards and buffersize.
+See updated documentation.
+
+
+2018-06-22: version 2.3
+every solr call will now give a line and showing number of results found.
+flush/closing System.out. (just to be certain....)
+
+
+2018-06-08: version 2.2
+New main method: LinksExtractor, it works similar to HtmlExctractor.
+Last column will be links(normalized) instead of the text content
+
+
+2018-06-07: version 2.1
+Enforce UTF-8  encodoing for System.out. Fixing encoding on KAC.
+content language added to Per's text mining extraction:
+"205" "199995"  "sha1:QWLPTQ6KPJSW6IZGS7SLBKMKDR37SZHC" "text/html; charset=utf-8"  "da"  "application/xhtml+xml; version=1.0" ...... 
+
+
+2018-06-07: version 2.0
+Major change:
+Changed to netarchive index 3.0. Some fields has that was multivalued are now single valued. Additional field has been introduced.
+See: https://github.com/ukwa/webarchive-discovery/wiki/Version-3-Solr-7-notes
+All communication with the SolrCloud is now connection via the master node (Ariel:52300) and
+it will delegate to the correct solr instance (collection).
+Your public key must be on ariel and the following tunnel must be set up before starting the jobs.
+ssh -L 127.0.0.1:52300:ariel.statsbiblioteket.dk:52300 develro@ariel.statsbiblioteket.dk
+ 
+Minor change:
+Upgraded SolrJ client from 4.8 to 7.3, required a few code changes as well.
+
+2018-xx-xx: version 1+:
+Deprecated, does not work against Solr Index v.3.0
