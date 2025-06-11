@@ -45,12 +45,10 @@ The program must have the following 7 arguments as program arguments:
 
 9) Deduplication (optional):   -d=url   . Will only show 1 result for each value of the field used for deduplication. Limitation are fields must be sortable. (url, hash etc.).  Also for multivalue fields deduplication will not work.
 
-
 Example :
 
 Example command with a query to all shards (ns) and almost every field defined. 4GB heap space and buffersize of 1000:
 localhost:53200 has been ssh tunnel forwarded to the solr master server.
-
 
 ```
 java -Xmx8G \
