@@ -57,7 +57,7 @@ java -Xmx8G \
     "http://localhost:52300/solr/"\
     ns 19900101 20200101 1000 \
     "title, subject, description, comments, author, url, url_norm, content_type, last_modified, last_modified_year, links, content, content_text_length, url_type, content_length, content_encoding, content_language, content_type_norm, wayback_date, crawl_date, crawl_dates, crawl_year, crawl_years, crawl_year_month, crawl_year_month_day, host, domain, public_suffix, links_hosts, links_domains, links_public_suffixes, hash, publication_date, publication_year, content_type_version, content_type_full, content_type_tika, content_type_droid, content_type_served, content_type_ext, server, generator, ssdeep_hash_bs_3, ssdeep_hash_bs_6"\
-     "text:\"thomas egense\""
+     "text:\"corona OR covid\""
 ```
 
 
@@ -71,7 +71,7 @@ java -Xmx8G \
     "https://solr-url.com/solr/" \
     ns 19900101 20200101 1000 \
     "title, subject, description, comments, author, url, url_norm, content_type, last_modified, last_modified_year, links, content, content_text_length, url_type, content_length, content_encoding, content_language, content_type_norm, wayback_date, crawl_date, crawl_dates, crawl_year, crawl_years, crawl_year_month, crawl_year_month_day, host, domain, public_suffix, links_hosts, links_domains, links_public_suffixes, hash, publication_date, publication_year, content_type_version, content_type_full, content_type_tika, content_type_droid, content_type_served, content_type_ext, server, generator, ssdeep_hash_bs_3, ssdeep_hash_bs_6"\
-     "text:\"thomas egense\""
+     "text:\"corona OR covid\""
 ```
 
 
@@ -91,7 +91,7 @@ java -Xmx8G \
     "http://localhost:52387/solr/ns87"\
     "" 19900101 20400101 1000 \
     "title, subject, description, comments, author, url, url_norm"\
-     "text:\"thomas egense\" AND text:katte"
+     "text:\"corona OR covid\" AND crawl_year:2020"
 ```
 
 
